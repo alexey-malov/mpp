@@ -1,4 +1,4 @@
-﻿# CMakeList.txt : Top-level CMake project file, do global configuration
+# CMakeList.txt : Top-level CMake project file, do global configuration
 # and include sub-projects here.
 #
 cmake_minimum_required (VERSION 3.8)
@@ -11,5 +11,11 @@ endif()
 
 project ("c_samples")
 
+# Disable MSVC deprecation warnings for standard C functions
+if (MSVC)
+  add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
+endif()
+
 # Include sub-projects.
 add_subdirectory ("hello_world")
+add_subdirectory ("sum_two_numbers")
