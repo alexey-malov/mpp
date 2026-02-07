@@ -19,3 +19,4 @@ endif()
 # Include sub-projects.
 add_subdirectory ("hello_world")
 add_subdirectory ("sum_two_numbers")
+add_subdirectory ("echo")
