@@ -2,17 +2,39 @@
 
 This document provides essential information for AI coding agents working in this repository.
 
+## Quick Reference
+
+**Working Directory:** `/mnt/source/repos/mp-prog/samples/c_samples`
+
+```bash
+# Configure (Windows x64 Debug)
+cmake --preset x64-debug
+
+# Build all
+cmake --build out/build/x64-debug
+
+# Build specific target
+cmake --build out/build/x64-debug --target hello_world
+
+# Run executable
+./out/build/x64-debug/hello_world/hello_world.exe  # Windows
+./out/build/linux-debug/hello_world/hello_world    # Linux/macOS
+
+# Clean
+rm -rf out/
+```
+
 ## Project Overview
 
-**Course:** Программирование микропроцессоров (Microprocessor Programming)
-**Primary Language:** C (C11 standard)
-**Secondary Languages:** Assembly (x86/64, microcontroller assembly planned)
-**Build System:** CMake (3.8+) with Ninja generator
+**Course:** Программирование микропроцессоров (Microprocessor Programming)  
+**Primary Language:** C (C11 standard)  
+**Secondary Languages:** Assembly (x86/64, microcontroller assembly planned)  
+**Build System:** CMake (3.8+) with Ninja generator  
 **Target Platforms:** Windows (x64/x86), Linux, macOS
 
 ## Technology Stack
 
-- **Language:** C11
+- **Language:** C11 (ISO/IEC 9899:2011)
 - **Build Tool:** CMake 3.8+
 - **Generator:** Ninja (Windows), platform-specific for Linux/macOS
 - **Compilers:** 
@@ -23,14 +45,19 @@ This document provides essential information for AI coding agents working in thi
 ## Project Structure
 
 ```
-mpp/
+mp-prog/
 ├── samples/
-│   └── c_samples/          # C programming samples
-│       ├── CMakeLists.txt  # Top-level build configuration
-│       ├── CMakePresets.json  # CMake preset configurations
-│       └── hello_world/    # Individual sample projects
-│           ├── CMakeLists.txt
-│           └── hello.c
+│   ├── c_samples/          # C programming samples
+│   │   ├── CMakeLists.txt  # Top-level build configuration
+│   │   ├── CMakePresets.json  # CMake preset configurations
+│   │   ├── hello_world/    # Individual sample projects
+│   │   ├── echo/
+│   │   └── sum_two_numbers/
+│   └── sandbox.c           # Scratch file for experiments
+├── labs/
+│   └── 01/                 # Lab assignments
+│       └── README.md       # Lab 1 instructions
+├── lectures/               # Course lectures
 ├── AGENTS.md               # This file
 ├── README.md               # Course structure
 └── LICENSE
