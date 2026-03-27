@@ -14,5 +14,15 @@ void FunctionNameUnUpperCamelCase(int varNameInLowerCamelCase)
 
 int main(void)
 {
+    int ch = getchar();
+    if (ch == EOF)
+    {
+        printf("End of file reached\n");
+        return 1;
+    }
+    else
+    {
+        printf("Character read: %c\n", ch);
+    }
     return 0;
 }
