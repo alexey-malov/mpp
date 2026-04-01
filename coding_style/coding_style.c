@@ -9,6 +9,16 @@ struct StructNameInUpperCamelCase
 	int memberNameInLowerCamelCase;
 };
 
+enum ParserState
+{
+	// В разных enum-ах не допускается пересечение имен значений,
+	// поэтому общепринятой практикой является добавление префикса (связанного с именем enum-а)
+	// Здесь используется префикс PS - сокращение от Parser State
+	PS_IDLE,
+	PS_WITHIN_WORD,
+	PS_BETWEEN_WORDS,
+};
+
 // Function name should be in UpperCamelCase
 void FunctionNameUnUpperCamelCase(int varNameInLowerCamelCase)
 {
